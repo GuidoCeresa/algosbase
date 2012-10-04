@@ -8,7 +8,6 @@ package algosbase
  * To change this template use File | Settings | File Templates.
  */
 class LibHtml {
-
     /**
      * Inserisce tag in testa e coda della stringa.
      * Se arriva un oggetto non stringa, restituisce nullo
