@@ -10,9 +10,9 @@ package algosbase
 class Lib {
     static LibArray Array = new LibArray()
     static LibWeb Web = new LibWeb()
-//        static LibDate Date = new LibDate()
+    static LibDate Date = new LibDate()
     static LibTesto Txt = new LibTesto()
-//        static LibMat Mat = new LibMat()
+    static LibMat Mat = new LibMat()
     static LibHtml Html = new LibHtml()
     static LibFile File = new LibFile()
 

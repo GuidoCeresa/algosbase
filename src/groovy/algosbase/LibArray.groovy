@@ -544,4 +544,4 @@ public class LibArray {
         return parole
     } // fine del metodo statico
 
-}// fine della classe
+}// fine della classe statica

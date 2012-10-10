@@ -24,7 +24,6 @@ class LibTestoTest extends GroovyTestCase {
      * Un nullo ritorna un nullo
      * Un oggetto non stringa ritorna uguale
      */
-
     void testPrimaMaiuscola() {
         String minuscola = 'tuttominuscolo'
         String maiuscola = 'Tuttominuscolo'
@@ -65,7 +64,6 @@ class LibTestoTest extends GroovyTestCase {
      * Un nullo ritorna un nullo
      * Un oggetto non stringa ritorna uguale
      */
-
     void testPrimaMinuscola() {
         String minuscola = 'tuttoMinuscolo'
         String maiuscola = 'TuttoMinuscolo'
@@ -109,10 +107,8 @@ class LibTestoTest extends GroovyTestCase {
      *
      * @param entrata stringa in ingresso
      * @param testa da eliminare
-     *
      * @return uscita stringa convertita
      */
-
     void testLevaTesta() {
         String testoUno = 'SeptuttoMinuscolo'
         String testoDue = 'Sep tuttoMinuscolo '
@@ -167,12 +163,11 @@ class LibTestoTest extends GroovyTestCase {
      * Elimina spazi vuoti iniziali e finali
      * Se manca la coda, restituisce la stringa
      * Se arriva un oggetto non stringa, restituisce l'oggetto
+     *
      * @param stringaIn testo in ingresso
      * @param coda da eliminare
-     *
      * @return stringa convertita
      */
-
     void testLevaCoda() {
         String testoUno = 'tuttoMinuscoloSep'
         String testoDue = 'tuttoMinuscolo Sep'
@@ -245,7 +240,6 @@ class LibTestoTest extends GroovyTestCase {
      * @param newStringa da sostituire
      * @return testoOut convertito
      */
-
     void testSostituisce() {
         String testo
         String oldStringa
@@ -325,7 +319,7 @@ class LibTestoTest extends GroovyTestCase {
     }// fine tests
 
     /**
-     * Elimina tutti i caratteri contenuti nella stringa.
+     * Elimina da una stringa tutti i caratteri indicati.
      * <p/>
      * Esegue solo se il testo è valido
      * Se arriva un oggetto non stringa, restituisce l'oggetto
@@ -334,7 +328,6 @@ class LibTestoTest extends GroovyTestCase {
      * @param subStringa da eliminare
      * @return testoOut stringa convertita
      */
-
     void testLevaTesto() {
         String testo = 'Prova di scrittura per levare dei caratteri'
         String uno = 'levare'
@@ -361,7 +354,6 @@ class LibTestoTest extends GroovyTestCase {
      * @param entrata stringa in ingresso
      * @return uscita stringa convertita
      */
-
     void testLevaPunti() {
         def numeroUno = '123g456'
         def numeroDue = '123.456'
@@ -410,7 +402,6 @@ class LibTestoTest extends GroovyTestCase {
      * @param entrata stringa in ingresso
      * @return uscita stringa convertita
      */
-
     void testLevaVirgola() {
         def numeroUno = '123g456'
         def numeroDue = '123,456'
@@ -462,7 +453,6 @@ class LibTestoTest extends GroovyTestCase {
      * @param numero da formattare (stringa, intero o double)
      * @return numero formattato
      */
-
     void testFormatNum() {
         String numText
         def lista = ['uno', 'due']
@@ -525,7 +515,6 @@ class LibTestoTest extends GroovyTestCase {
      * @param numero da formattare (stringa, intero o double)
      * @return numero formattato
      */
-
     void testFormatNum2() {
         int num
         def numero
@@ -571,7 +560,6 @@ class LibTestoTest extends GroovyTestCase {
      *         -1 se il secondo parametro è nullo
      *         -1 se il secondo parametro non è ne una lista di stringhe/interi, ne una stringa/intero
      */
-
     void testGetPos() {
         String testoUno = 'In questo 14 testo uno volte scrivo la parola due e tre pertanto la trovo'
         String testoDue = 'In questo tre testo tre volte scrivo la parola due e uno pertanto la trovo'
@@ -663,7 +651,6 @@ class LibTestoTest extends GroovyTestCase {
      * @param tagEnd tag finale per il contenuto richiesto
      * @return contenuto richiesto tra i due tag
      */
-
     void testEstrae() {
         String testo = 'In questo 14 testo uno volte scrivo la parola due e tre pertanto la trovo'
         String tagIni = 'volte'

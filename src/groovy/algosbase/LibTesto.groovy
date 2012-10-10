@@ -33,14 +33,16 @@ public class LibTesto {
     // tag per il valore falso per una posizione
     public static final int INT_NULLO = -1
 
-    // Forza il primo carattere della stringa a maiuscolo
-    // Restituisce una stringa
-    // Un numero ritorna un numero
-    // Un nullo ritorna un nullo
-    // Un oggetto non stringa ritorna uguale
-    //
-    // @param entrata stringa in ingresso
-    // @return uscita string in uscita
+    /**
+     * Forza il primo carattere della stringa a maiuscolo
+     * Restituisce una stringa
+     * Un numero ritorna un numero
+     * Un nullo ritorna un nullo
+     * Un oggetto non stringa ritorna uguale
+     *
+     * @param entrata stringa in ingresso
+     * @return uscita string in uscita
+     */
     public static primaMaiuscola(entrata) {
         // variabili e costanti locali di lavoro
         def uscita = entrata
@@ -58,14 +60,15 @@ public class LibTesto {
         return uscita
     } // fine del metodo statico
 
-    // Forza il primo carattere della stringa a minuscolo
-    // Restituisce una stringa
-    // Un numero ritorna un numero
-    // Un nullo ritorna un nullo
-    // Un oggetto non stringa ritorna uguale
-    //
-    // @param entrata stringa in ingresso
-    // @return uscita string in uscita
+    /**
+     * Forza il primo carattere della stringa a minuscolo
+     * Restituisce una stringa
+     * Un numero ritorna un numero
+     * Un nullo ritorna un nullo
+     * Un oggetto non stringa ritorna uguale
+     * @param entrata stringa in ingresso
+     * @return uscita string in uscita
+     */
     public static primaMinuscola(entrata) {
         // variabili e costanti locali di lavoro
         def uscita = entrata
@@ -83,15 +86,18 @@ public class LibTesto {
         return uscita
     } // fine del metodo statico
 
-    // Elimina la testa iniziale della stringa, se esiste.
-    // Esegue solo se la stringa è valida
-    // Elimina spazi vuoti iniziali e finali
-    // Se manca la testa, restituisce la stringa
-    // Se arriva un oggetto non stringa, restituisce l'oggetto
-    //
-    // @param entrata stringa in ingresso
-    // @param testa da eliminare
-    // @return uscita stringa convertita
+    /**
+     * Elimina la testa iniziale della stringa, se esiste.
+     * <p/>
+     * Esegue solo se la stringa è valida
+     * Elimina spazi vuoti iniziali e finali
+     * Se manca la testa, restituisce la stringa
+     * Se arriva un oggetto non stringa, restituisce l'oggetto
+     *
+     * @param entrata stringa in ingresso
+     * @param testa da eliminare
+     * @return uscita stringa convertita
+     */
     public static levaTesta(entrata, testa) {
         // variabili e costanti locali di lavoro
         def uscita = entrata
@@ -108,15 +114,18 @@ public class LibTesto {
         return uscita
     } // fine del metodo statico
 
-    // Elimina la coda terminale della stringa, se esiste.
-    // Esegue solo se la stringa è valida
-    // Elimina spazi vuoti iniziali e finali
-    // Se manca la coda, restituisce la stringa
-    // Se arriva un oggetto non stringa, restituisce l'oggetto
-    //
-    // @param entrata stringa in ingresso
-    // @param coda da eliminare
-    // @return uscita stringa convertita
+    /**
+     * Elimina la coda terminale della stringa, se esiste.
+     * <p/>
+     * Esegue solo se la stringa è valida
+     * Elimina spazi vuoti iniziali e finali
+     * Se manca la coda, restituisce la stringa
+     * Se arriva un oggetto non stringa, restituisce l'oggetto
+     *
+     * @param stringaIn testo in ingresso
+     * @param coda da eliminare
+     * @return stringa convertita
+     */
     public static levaCoda(entrata, coda) {
         // variabili e costanti locali di lavoro
         def uscita = entrata
@@ -134,14 +143,17 @@ public class LibTesto {
         return uscita
     } // fine del metodo statico
 
-    // Sostituisce tutte le occorrenze.
-    // Esegue solo se il testo è valido
-    // Se arriva un oggetto non stringa, restituisce l'oggetto
-    //
-    // @param testoIn in ingresso
-    // @param oldStringa da eliminare
-    // @param newStringa da sostituire
-    // @return testoOut convertito
+    /**
+     * Sostituisce tutte le occorrenze.
+     * <p/>
+     * Esegue solo se il testo è valido
+     * Se arriva un oggetto non stringa, restituisce l'oggetto
+     *
+     * @param testoIn in ingresso
+     * @param oldStringa da eliminare
+     * @param newStringa da sostituire
+     * @return testoOut convertito
+     */
     public static sostituisce(testoIn, oldStringa, newStringa) {
         // variabili e costanti locali di lavoro
         def testoOut = testoIn
@@ -171,13 +183,16 @@ public class LibTesto {
         return testoOut
     } // fine del metodo statico
 
-    // Elimina tutti i caratteri contenuti nella stringa.
-    // Esegue solo se il testo è valido
-    // Se arriva un oggetto non stringa, restituisce l'oggetto
-    //
-    // @param testoIn in ingresso
-    // @param subStringa da eliminare
-    // @return testoOut stringa convertita
+    /**
+     * Elimina da una stringa tutti i caratteri indicati.
+     * <p/>
+     * Esegue solo se il testo è valido
+     * Se arriva un oggetto non stringa, restituisce l'oggetto
+     *
+     * @param testoIn in ingresso
+     * @param subStringa da eliminare
+     * @return testoOut stringa convertita
+     */
     public static levaTesto(testoIn, subStringa) {
         // variabili e costanti locali di lavoro
         def testoOut = testoIn
@@ -193,35 +208,44 @@ public class LibTesto {
         return testoOut
     } // fine del metodo statico
 
-    // Elimina tutti i punti contenuti nella stringa.
-    // Esegue solo se la stringa è valida
-    // Se arriva un oggetto non stringa, restituisce l'oggetto
-    //
-    // @param entrata stringa in ingresso
-    // @return uscita stringa convertita
+    /**
+     * Elimina tutti i punti contenuti nella stringa.
+     * <p/>
+     * Esegue solo se la stringa è valida
+     * Se arriva un oggetto non stringa, restituisce l'oggetto
+     *
+     * @param entrata stringa in ingresso
+     * @return uscita stringa convertita
+     */
     public static levaPunti(entrata) {
         return LibTesto.levaTesto(entrata, PUNTO)
     } // fine del metodo statico
 
-    // Elimina tutte le virgole contenute nella stringa.
-    // Esegue solo se la stringa è valida
-    // Se arriva un oggetto non stringa, restituisce l'oggetto
-    //
-    // @param entrata stringa in ingresso
-    // @return uscita stringa convertita
+    /**
+     * Elimina tutte le virgole contenute nella stringa.
+     * <p/>
+     * Esegue solo se la stringa è valida
+     * Se arriva un oggetto non stringa, restituisce l'oggetto
+     *
+     * @param entrata stringa in ingresso
+     * @return uscita stringa convertita
+     */
     public static levaVirgole(entrata) {
         return LibTesto.levaTesto(entrata, VIRGOLA)
     } // fine del metodo statico
 
-    // Formattazione di un numero.
-    // Il numero può arrivare come stringa, intero o double
-    // Se la stringa contiene punti e virgole, viene pulita
-    // Se la stringa non è convertibile in numero, viene restituita uguale
-    // Inserisce il punto separatore ogni 3 cifre
-    // Se arriva un oggetto non previsto, restituisce l'oggetto
+    /**
+     * Formattazione di un numero.
+     * <p/>
+     * Il numero può arrivare come stringa, intero o double
+     * Se la stringa contiene punti e virgole, viene pulita
+     * Se la stringa non è convertibile in numero, viene restituita uguale
+     * Inserisce il punto separatore ogni 3 cifre
+     * Se arriva un oggetto non previsto, restituisce l'oggetto
 
-    // @param numero da formattare (stringa, intero o double)
-    // @return numero formattato
+     * @param numero da formattare (stringa, intero o double)
+     * @return numero formattato
+     */
     public static formatNum(numero) {
         // variabili e costanti locali di lavoro
         def formattato = numero
@@ -286,17 +310,20 @@ public class LibTesto {
         return formattato
     }
 
-    // Restituisce la posizione di un tag in un testo
-    // Riceve una lista di tag da provare
-    // Restituisce la prima posizione tra tutti i tag trovati
-    //
-    // @param testo in ingresso
-    // @param lista di stringhe/interi, oppure singola stringa/intero
-    // @return posizione della prima stringa trovata
-    //         -1 se non ne ha trovato nessuna
-    //         -1 se il primo parametro è nullo o vuoto, oppure non è una stringa
-    //         -1 se il secondo parametro è nullo
-    //         -1 se il secondo parametro non è ne una lista di stringhe/interi, ne una stringa/intero
+    /**
+     * Restituisce la posizione di un tag in un testo
+     * Riceve una lista di tag da provare
+     * Restituisce la prima posizione tra tutti i tag trovati
+     *
+     * @param testo in ingresso
+     * @param lista di stringhe/interi, oppure singola stringa/intero
+     *
+     * @return posizione della prima stringa trovata
+     *         -1 se non ne ha trovato nessuna
+     *         -1 se il primo parametro è nullo o vuoto, oppure non è una stringa
+     *         -1 se il secondo parametro è nullo
+     *         -1 se il secondo parametro non è ne una lista di stringhe/interi, ne una stringa/intero
+     */
     public static getPos(testo, lista) {
         // variabili e costanti locali di lavoro
         int pos = INT_NULLO
@@ -335,14 +362,17 @@ public class LibTesto {
         return pos
     } // fine del metodo statico
 
-    // Estrae da un testo il contenuto compreso fra i tag.
-    // Esegue solo se il testo ed i tag sono validi
-    // Elimina spazi vuoti
-    //
-    // @param testo completo da esaminare
-    // @param tagIni tag iniziale per il contenuto richiesto
-    // @param tagEnd tag finale per il contenuto richiesto
-    // @return contenuto richiesto tra i due tag
+    /**
+     * Estrae da un testo il contenuto compreso fra i tag.
+     *
+     * Esegue solo se il testo ed i tag sono validi
+     * Elimina spazi vuoti
+     *
+     * @param testo completo da esaminare
+     * @param tagIni tag iniziale per il contenuto richiesto
+     * @param tagEnd tag finale per il contenuto richiesto
+     * @return contenuto richiesto tra i due tag
+     */
     public static estrae(String testo, String tagIni, String tagEnd) {
         String contenuto = testo
         int posIni

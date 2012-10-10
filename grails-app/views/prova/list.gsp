@@ -24,6 +24,8 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="id" title="${message(code: 'prova.id.label', default: 'Id')}" />
+					
 						<g:sortableColumn property="testo3" title="${message(code: 'prova.testo3.label', default: 'Testo3')}" />
 					
 						<g:sortableColumn property="testo" title="${message(code: 'prova.testo.label', default: 'Testo')}" />
@@ -40,16 +42,23 @@
 				<g:each in="${provaInstanceList}" status="i" var="provaInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${provaInstance.id}">${fieldValue(bean: provaInstance, field: "testo3")}</g:link></td>
+						<td><g:link action="show" id="${provaInstance.id}">${fieldValue(bean: provaInstance, field: "id")}</g:link></td>
 					
-						<td>${fieldValue(bean: provaInstance, field: "testo")}</td>
-					
-						<td>${fieldValue(bean: provaInstance, field: "testo2")}</td>
-					
-						<td>${fieldValue(bean: provaInstance, field: "testo4")}</td>
-					
-						<td>${fieldValue(bean: provaInstance, field: "testo5")}</td>
-					
+                        <td><g:link action="show"
+                                    id="${provaInstance.id}">${fieldValue(bean: provaInstance, field: "testo3")}</g:link></td>
+                        
+                        <td><g:link action="show"
+                                    id="${provaInstance.id}">${fieldValue(bean: provaInstance, field: "testo")}</g:link></td>
+                        
+                        <td><g:link action="show"
+                                    id="${provaInstance.id}">${fieldValue(bean: provaInstance, field: "testo2")}</g:link></td>
+                        
+                        <td><g:link action="show"
+                                    id="${provaInstance.id}">${fieldValue(bean: provaInstance, field: "testo4")}</g:link></td>
+                        
+                        <td><g:link action="show"
+                                    id="${provaInstance.id}">${fieldValue(bean: provaInstance, field: "testo5")}</g:link></td>
+                        
 					</tr>
 				</g:each>
 				</tbody>
