@@ -17,6 +17,10 @@ class Prova {
         testo3(nullable: false, blank: false)
     } // end of static constraints
 
+    /*+
+     *
+     *
+     */
     static mapping = {
     } // end of static mapping
 
@@ -25,7 +29,7 @@ class Prova {
      * @todo da regolare (obbligatorio)
      */
     String toString() {
-        return testo3+testo3
+        return testo3 + testo3
     } // end of toString
 
     /**
