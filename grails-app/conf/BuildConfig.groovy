@@ -55,3 +55,7 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.0'
     }
 }
+grails.project.repos.algosRepo.url = "http://77.43.32.198:8080/artifactory/plugins-release-local/"
+grails.project.repos.algosRepo.type = "maven"
+grails.project.repos.algosRepo.username = "admin"
+grails.project.repos.algosRepo.password = "password"

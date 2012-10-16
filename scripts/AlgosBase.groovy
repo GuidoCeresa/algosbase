@@ -21,7 +21,7 @@ class AlgosBase {
     private static String scaffolding = 'scaffolding/'
     private static String css = 'css/'
     private static String scripts = 'scripts/'
-    private static String source = 'it/algos/algosbase/source/'
+    private static String source = 'algosbase/source/'
     private static String dir = grails + source
 
     def static srcNames = [] // global list of source files to copy
