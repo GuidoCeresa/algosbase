@@ -1,0 +1,10 @@
+Created by Algos s.r.l.
+Date: mag 2012
+Questo file è stato installato dal plugin AlgosBase
+Tipicamente VERRA sovrascritto ad ogni nuova release del plugin
+per rimanere aggiornato
+Se vuoi che le prossime release del plugin NON sovrascrivano questo file,
+perdendo tutte le modifiche effettuate qui,
+regola a false il flag di controllo flagOverwrite©
+flagOverwrite = true
+

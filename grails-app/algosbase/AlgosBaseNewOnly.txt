@@ -1,0 +1,9 @@
+Created by Algos s.r.l.
+Date: mag 2012
+Questo file è stato installato dal plugin AlgosBase
+Non esisteva precedentemente ed è stato creato ex-novo dal plugin
+Non verrà più sovrascritto, in nessun caso, dalle successive release del plugin
+indipendentemente dal fatto che venga localmente modificato o meno
+Se si vuole reinstallarlo per una eventuale versione più aggiornata del plugin,
+occorre cancellarlo PRIMA di reinstallare il plugin
+
