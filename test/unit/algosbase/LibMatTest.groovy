@@ -146,6 +146,87 @@ class LibMatTest extends GroovyTestCase {
         richiesto = 1
         ottenuto = Lib.Mat.divRound(numeratore, denominatore)
         assert ottenuto == richiesto
+    } // fine test
+
+    /**
+     * Controlla se il numero è divisibile per 3
+     *
+     * @param num da controllare
+     * @return vero se è divisibile
+     */
+    void testDivisibileTre() {
+        int numero
+        boolean ottenuto
+        boolean richiesto
+
+        numero = 6
+        richiesto = true
+        ottenuto = Lib.Mat.isDivisibileTre(numero)
+        assert ottenuto == richiesto
+
+        numero = 7
+        richiesto = false
+        ottenuto = Lib.Mat.isDivisibileTre(numero)
+        assert ottenuto == richiesto
+
+        numero = 3
+        richiesto = true
+        ottenuto = Lib.Mat.isDivisibileTre(numero)
+        assert ottenuto == richiesto
+
+        numero = 2
+        richiesto = false
+        ottenuto = Lib.Mat.isDivisibileTre(numero)
+        assert ottenuto == richiesto
+
+        numero = 1
+        richiesto = false
+        ottenuto = Lib.Mat.isDivisibileTre(numero)
+        assert ottenuto == richiesto
+
+        numero = 0
+        richiesto = false
+        ottenuto = Lib.Mat.isDivisibileTre(numero)
+        assert ottenuto == richiesto
+
+        richiesto = false
+        ottenuto = Lib.Mat.isDivisibileTre('falso')
+        assert ottenuto == richiesto
+    } // fine test
+
+    /**
+     * Resto dopo una divisione per tre
+     *
+     * @param num da controllare
+     * @return resto:
+     *          zero se il numero è divisibile per 3
+     *          uno se il resto è 1
+     *          due se il resto è 2
+     */
+    void testRestoDivisioneTre() {
+        int numero
+        int ottenuto
+        int richiesto
+
+        numero = 6
+        richiesto = 0
+        ottenuto = Lib.Mat.restoDivisioneTre(numero)
+        assert ottenuto == richiesto
+
+        numero = 0
+        richiesto = 0
+        ottenuto = Lib.Mat.restoDivisioneTre(numero)
+        assert ottenuto == richiesto
+
+        numero = 7
+        richiesto = 1
+        ottenuto = Lib.Mat.restoDivisioneTre(numero)
+        assert ottenuto == richiesto
+
+        numero = 8
+        richiesto = 2
+        ottenuto = Lib.Mat.restoDivisioneTre(numero)
+        assert ottenuto == richiesto
 
     } // fine test
 

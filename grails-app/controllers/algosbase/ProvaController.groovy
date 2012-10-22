@@ -6,6 +6,8 @@ class ProvaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    def mailService
+
     def index() {
         redirect(action: "list", params: params)
     }
@@ -16,6 +18,12 @@ class ProvaController {
     }
 
     def create() {
+        sendMail {
+            to "guidoceresa@me.com"
+            from "gac@algos.it"
+            subject "bingo"
+            body 'controllata?'
+        }
         [provaInstance: new Prova(params)]
     }
 
@@ -63,8 +71,8 @@ class ProvaController {
         if (version != null) {
             if (provaInstance.version > version) {
                 provaInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'prova.label', default: 'Prova')] as Object[],
-                          "Another user has updated this Prova while you were editing")
+                        [message(code: 'prova.label', default: 'Prova')] as Object[],
+                        "Another user has updated this Prova while you were editing")
                 render(view: "edit", model: [provaInstance: provaInstance])
                 return
             }

@@ -70,11 +70,13 @@ type = firstTimeTrueAndAfterwardsOnlyNotModified
 tag = groovyTag
 algosBase.addSource(srcName, destDirectory, type, tag)
 
-srcName = 'BootStrap' + groovySuffix
-destDirectory = conf
-type = firstTimeTrueAndAfterwardsOnlyNotModified
-tag = groovyTag
-algosBase.addSource(srcName, destDirectory, type, tag)
+
+//@todo duplicava il nome della classe - eventualmente studiare un cambio del nome della classe
+//srcName = 'BootStrap' + groovySuffix
+//destDirectory = conf
+//type = firstTimeTrueAndAfterwardsOnlyNotModified
+//tag = groovyTag
+//algosBase.addSource(srcName, destDirectory, type, tag)
 
 srcName = 'BuildConfig' + groovySuffix
 destDirectory = conf
@@ -94,11 +96,12 @@ type = firstTimeTrueAndAfterwardsOnlyNotModified
 tag = groovyTag
 algosBase.addSource(srcName, destDirectory, type, tag)
 
-srcName = 'UrlMappings' + groovySuffix
-destDirectory = conf
-type = firstTimeTrueAndAfterwardsOnlyNotModified
-tag = groovyTag
-algosBase.addSource(srcName, destDirectory, type, tag)
+//@todo duplicava il nome della classe - eventualmente studiare un cambio del nome della classe
+//srcName = 'UrlMappings' + groovySuffix
+//destDirectory = conf
+//type = firstTimeTrueAndAfterwardsOnlyNotModified
+//tag = groovyTag
+//algosBase.addSource(srcName, destDirectory, type, tag)
 
 srcName = 'main' + gspSuffix
 destDirectory = layouts

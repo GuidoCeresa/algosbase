@@ -35,7 +35,6 @@ class LibMat {
             log.warn 'il parametro non è un numero'
         }// fine del blocco if-else
 
-
         // valore di ritorno
         return pari
     } // fine del metodo
@@ -54,10 +53,50 @@ class LibMat {
         if (num && num in Number) {
             pari = LibMat.isPari(num)
             dispari = !pari
-        }// fine del blocco if
+        } else {
+            log.warn 'il parametro non è un numero'
+        }// fine del blocco if-else
 
         // valore di ritorno
         return dispari
+    } // fine del metodo
+
+    /**
+     * Controlla se il numero è divisibile per 3
+     *
+     * @param num da controllare
+     * @return vero se è divisibile
+     */
+    public static boolean isDivisibileTre(def num) {
+        // variabili e costanti locali di lavoro
+        boolean divisibile = false
+        int meta
+        int triplo
+
+        if (num && num in Number) {
+            meta = num / 3
+            triplo = meta * 3
+            if (triplo == num) {
+                divisibile = true
+            }// fine del blocco if
+        } else {
+            log.warn 'il parametro non è un numero'
+        }// fine del blocco if-else
+
+
+        // valore di ritorno
+        return divisibile
+    } // fine del metodo
+
+    /**
+     * Controlla se il numero NON è divisibile per 3
+     *
+     * @param num da controllare
+     * @return vero se NON è divisibile
+     */
+    public static boolean isNotDivisibileTre(def num) {
+        // valore di ritorno
+        return !LibMat.isDivisibileTre(num)
     } // fine del metodo
 
     /**
@@ -86,5 +125,31 @@ class LibMat {
         /* valore di ritorno */
         return risultato
     } // fine del metodo
+
+    /**
+     * Resto dopo una divisione per tre
+     *
+     * @param num da controllare
+     * @return resto:
+     *          zero se il numero è divisibile per 3
+     *          uno se il resto è 1
+     *          due se il resto è 2
+     */
+    static int restoDivisioneTre(def num) {
+        /* variabili e costanti locali di lavoro */
+        int resto = 0
+        def restoTemp
+
+        if (num && num in Number) {
+            if (LibMat.isNotDivisibileTre(num)) {
+                resto = num % 3
+            }// fine del blocco if
+        } else {
+            log.warn 'il parametro non è un numero'
+        }// fine del blocco if-else
+
+        // valore di ritorno
+        return resto
+    } // fine test
 
 }// fine della classe statica

@@ -150,7 +150,6 @@ class LibWeb {
         return contenuto
     } // fine del metodo
 
-
     /**
      * Regola la connessione.
      * Regola alcuni valori standard della connessione
@@ -174,5 +173,69 @@ class LibWeb {
         // valore di ritorno
         return connection
     } // fine della closure
+
+    /**
+     * Suddivide la lista in tre colonne.
+     *
+     * @param listaIn in ingresso
+     * @return listaOut in uscita
+     */
+    public static listaTreColonne(ArrayList<String> listaIn) {
+        // variabili e costanti locali di lavoro
+        ArrayList<String> listaOut = (ArrayList<String>) listaIn.clone()
+        String tagIni = '{{MultiCol}}'
+        String tagColonna = '{{ColBreak}}'
+        String tagEnd = '{{EndMultiCol}}'
+        int dim
+        int primoTag
+        int secondoTag
+        int resto
+
+        if (listaIn) {
+            dim = listaIn.size()
+            primoTag = dim / 3
+            resto += dim % 3
+            switch (dim) {
+                case 0:
+                case 1:
+                    return listaOut
+                    break
+                case 2:
+                    primoTag = 1
+                    listaOut.add(primoTag, tagColonna)
+                    listaOut.add(0, tagIni)
+                    listaOut.add(tagEnd)
+                    return listaOut
+                    break
+                case 3:
+                    primoTag = 1
+                    secondoTag = 2
+                    listaOut.add(secondoTag, tagColonna)
+                    listaOut.add(primoTag, tagColonna)
+                    listaOut.add(0, tagIni)
+                    listaOut.add(tagEnd)
+                    return listaOut
+                    break
+                default: // caso non definito
+                    secondoTag = primoTag * 2
+                    if (resto > 0) {
+                        primoTag++
+                        secondoTag++
+                    }// fine del blocco if
+                    if (resto > 1) {
+                        secondoTag++
+                    }// fine del blocco if
+                    listaOut.add(secondoTag, tagColonna)
+                    listaOut.add(primoTag, tagColonna)
+                    listaOut.add(0, tagIni)
+                    listaOut.add(tagEnd)
+                    return listaOut
+                    break
+            } // fine del blocco switch
+        }// fine del blocco if
+
+        // valore di ritorno
+        return listaOut
+    } // fine del metodo
 
 } //fine della classe

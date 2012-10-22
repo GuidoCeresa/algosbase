@@ -1,4 +1,6 @@
-<%=packageName ? "package ${packageName}\n\n" : ''%>import org.springframework.dao.DataIntegrityViolationException
+package ${packageName}
+
+import org.springframework.dao.DataIntegrityViolationException
 
 class ${className}Controller {
 

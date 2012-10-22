@@ -1,5 +1,7 @@
 package algosbase
 
+import grails.plugin.mail.MailService
+
 /**
  * Created with IntelliJ IDEA.
  * User: Gac
@@ -8,6 +10,8 @@ package algosbase
  * To change this template use File | Settings | File Templates.
  */
 class LibArrayTest extends GroovyTestCase {
+
+
     protected void setUp() {
         super.setUp()
     }
@@ -16,6 +20,7 @@ class LibArrayTest extends GroovyTestCase {
     protected void tearDown() {
         super.tearDown()
     }
+
 
     // Estrae i valori unici da un array con (eventuali) valori doppi
     // Ordina l'array
@@ -58,7 +63,6 @@ class LibArrayTest extends GroovyTestCase {
      * @param arraySecondo
      * @return arraySomma disordinato
      */
-
     void testSommaDisordinata() {
         def primoNum = [7, 87, 4, 25, 1, 12]
         def secondoNum = [11, 7, 55, 4]
@@ -141,7 +145,6 @@ class LibArrayTest extends GroovyTestCase {
      * @param arraySecondo
      * @return arraySomma ordinato
      */
-
     void testSomma() {
         def primoNum = [7, 87, 4, 25, 1, 12]
         def primoNumOrd = [1, 4, 7, 12, 25, 87]
@@ -228,7 +231,6 @@ class LibArrayTest extends GroovyTestCase {
      * @param arraySecondo
      * @return arrayDifferenza disordinata
      */
-
     void testDifferenzaDisordinata() {
         def primoNum = [7, 87, 4, 25, 1, 12]
         def secondoNum = [11, 7, 55, 4]
@@ -325,7 +327,6 @@ class LibArrayTest extends GroovyTestCase {
      * @param arraySecondo
      * @return arrayDifferenza ordinata
      */
-
     void testDifferenza() {
         def primoNum = [7, 87, 4, 25, 1, 12]
         def secondoNum = [11, 7, 55, 4]
@@ -435,7 +436,6 @@ class LibArrayTest extends GroovyTestCase {
      * @param elemento
      * @return vero se l'elemento è stato aggiunto
      */
-
     void testAdd() {
         def listaNum = [7, 87, 4, 25, 1, 12]
         def listaStr = ['due', 'otto', 'beta', 'alfa', 'omicron']
@@ -478,7 +478,6 @@ class LibArrayTest extends GroovyTestCase {
      *
      * @return mappa ordinata
      */
-
     void testOrdina() {
         HashMap mappa = new HashMap()
         LinkedHashMap mappaOrdinata = new LinkedHashMap()
@@ -528,7 +527,6 @@ class LibArrayTest extends GroovyTestCase {
      *
      * @return una lista contenente le parti di stringa separate
      */
-
     void testCreaLista() {
         ArrayList<String> lista
         String sep = ','
@@ -583,7 +581,6 @@ class LibArrayTest extends GroovyTestCase {
      *
      * @return una lista contenente le parti di stringa separate
      */
-
     void testCreaLista2() {
         ArrayList<String> lista
         String strUno = ' alfa,beta,delta '
@@ -624,7 +621,6 @@ class LibArrayTest extends GroovyTestCase {
      *
      * @return lista di stringhe contenente gli elementi dell'array
      */
-
     void testCreaLista3() {
         String[] array = new String[3]
         ArrayList<String> lista
@@ -697,12 +693,11 @@ class LibArrayTest extends GroovyTestCase {
     }// fine tests
 
 
-
     void testBlocchi() {
         String testo = 'this is a test'
         def ottenuto
 
-        ottenuto = Lib.Array.getBlocchi(testo,' ')
+        ottenuto = Lib.Array.getBlocchi(testo, ' ')
         assert ottenuto != null
         assert ottenuto in ArrayList
         assert ottenuto.size() == 4
@@ -717,7 +712,7 @@ class LibArrayTest extends GroovyTestCase {
         String testo = 'primaRiga\nSeconda\nTerza'
         def ottenuto
 
-        ottenuto = Lib.Array.getBlocchi(testo,'\n')
+        ottenuto = Lib.Array.getBlocchi(testo, '\n')
         assert ottenuto != null
         assert ottenuto in ArrayList
         assert ottenuto.size() == 3
