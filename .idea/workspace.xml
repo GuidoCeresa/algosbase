@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20cee582-7923-4eb2-ba01-f2f4e59554e5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="algosbase.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -809,7 +808,11 @@
       <created>1350893039878</created>
       <updated>1350893039878</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix readme3">
+      <created>1350893090926</created>
+      <updated>1350893090926</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -899,7 +902,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix readme2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix readme3" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -922,6 +925,7 @@
     <MESSAGE value="dir source" />
     <MESSAGE value="fix readme" />
     <MESSAGE value="fix readme2" />
+    <MESSAGE value="fix readme3" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
