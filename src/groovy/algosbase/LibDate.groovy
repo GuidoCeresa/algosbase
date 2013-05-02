@@ -98,6 +98,7 @@ public class LibDate {
         }// fine del blocco try-catch        /* crea il calendario */
     } // fine del metodo
 
+
     /**
      * Aggiunge (o sottrae) ad un una data i giorni indicati.
      *
@@ -124,6 +125,165 @@ public class LibDate {
 
         /* valore di ritorno */
         return nuovaData
+    } // fine del metodo
+
+    /**
+     * Aggiunge ad un timestamp i secondi indicati.
+     * Se i secondi sono negativi, li sottrae <br>
+     *
+     * @param time timestamp di riferiemento
+     * @param secondi da aggiungere
+     * @return la data risultante
+     */
+    static Timestamp add(Timestamp time, Number secondi) {
+        /* variabili e costanti locali di lavoro */
+        Timestamp nuovoTimestamp = null
+        long msec
+        long delta
+        long nuova
+
+        if (time) {
+            msec = time.getTime()
+            delta = secondi * 1000
+            nuova = msec + delta
+            nuovoTimestamp = new Timestamp(nuova)
+        }// fine del blocco if
+
+        /* valore di ritorno */
+        return nuovoTimestamp
+    } // fine del metodo
+
+    /**
+     * Crea una data.
+     *
+     * @param giorno il giorno del mese (1 per il primo)
+     * @param mese il mese dell'anno (1 per gennaio)
+     * @param anno l'anno
+     *
+     * @return la data creata
+     */
+    static Date creaData(int giorno, int mese, int anno) {
+        /* variabili e costanti locali di lavoro */
+        Date data = null
+        Calendar cal
+
+        try { // prova ad eseguire il codice
+
+            cal = Calendar.getInstance()
+
+            cal.set(Calendar.YEAR, anno)
+            cal.set(Calendar.MONTH, mese - 1)
+            cal.set(Calendar.DAY_OF_MONTH, giorno)
+
+            cal.set(Calendar.HOUR_OF_DAY, 0)
+            cal.set(Calendar.MINUTE, 0)
+            cal.set(Calendar.SECOND, 0)
+            cal.set(Calendar.MILLISECOND, 0)
+
+            data = new Date(cal.getTime().getTime())
+
+        } catch (Exception unErrore) { // intercetta l'errore
+        }// fine del blocco try-catch
+
+        /* valore di ritorno */
+        return data
+    } // fine del metodo
+
+    /**
+     * Elimina l'ora da una data.
+     * Imposta le informazioni sull'ora a zero
+     *
+     * @param dateIn la data dalla quale eliminare l'ora
+     * @return la data senza ora
+     */
+    static Date dropTime(Date dateIn) {
+        /* variabili e costanti locali di lavoro */
+        Date dateOut = null
+        Calendar cal
+
+        if (dateIn) {
+            cal = Calendar.getInstance()
+            cal.setTime(dateIn)
+            cal.set(Calendar.HOUR_OF_DAY, 0)
+            cal.set(Calendar.MINUTE, 0)
+            cal.set(Calendar.SECOND, 0)
+            cal.set(Calendar.MILLISECOND, 0)
+            dateOut = cal.getTime()
+        }// fine del blocco if
+
+        /* valore di ritorno */
+        return dateOut
+    } // fine del metodo
+
+    /**
+     * Ritorna l'anno di una data fornita.
+     *
+     * @param data fornita
+     *
+     * @return l'anno della data
+     */
+    static int getAnno(Date data) {
+        /* variabili e costanti locali di lavoro */
+        int anno = 0
+        GregorianCalendar cal
+
+        try {    // prova ad eseguire il codice
+            if (!isVuota(data)) {
+                cal = getCalendario()
+                cal.setTime(data)
+                anno = cal.get(Calendar.YEAR)
+            }// fine del blocco if
+        } catch (Exception unErrore) {    // intercetta l'errore
+        } // fine del blocco try-catch
+
+        /* valore di ritorno */
+        return anno
+    } // fine del metodo
+
+    /**
+     * Ritorna l'anno corrente.
+     * <p/>
+     *
+     * @return l'anno della data corrente
+     */
+    static int getAnnoCorrente() {
+        return getAnno(getCorrente())
+    } // fine del metodo
+
+    private static GregorianCalendar getCalendario() {
+        return calendario
+    } // fine del metodo
+
+    /**
+     * Restituisce la data corrente.
+     *
+     * @return la data del giorno
+     */
+    static Date getCorrente() {
+        /* variabili e costanti locali di lavoro */
+        Date dataOut = null
+        Date data
+        String stringa
+
+        try { // prova ad eseguire il codice
+
+            /* recupera la data di sistema */
+            data = new Date(System.currentTimeMillis())
+
+            // todo provvisorio!!
+//            data = Lib.Date.creaData(11,7,2008);
+
+            /* converte in stringa e poi di nuovo in data per forzare
+             * la perdita della parte relativa a ore, minuti, secondi ecc...
+             * che causa problemi nel confronto di date uguali */
+            stringa = LibDate.getStringa(data)
+            dataOut = LibDate.getData(stringa)
+
+        } catch (Exception unErrore) { // intercetta l'errore
+        }// fine del blocco try-catch
+
+        /* valore di ritorno */
+        return dataOut
     } // fine del metodo
 
     /**
@@ -167,57 +327,7 @@ public class LibDate {
         return giorni
     } // fine del metodo
 
-    /**
-     * Elimina l'ora da una data.
-     * Imposta le informazioni sull'ora a zero
-     *
-     * @param dateIn la data dalla quale eliminare l'ora
-     * @return la data senza ora
-     */
-    static Date dropTime(Date dateIn) {
-        /* variabili e costanti locali di lavoro */
-        Date dateOut = null
-        Calendar cal
 
-        if (dateIn) {
-            cal = Calendar.getInstance()
-            cal.setTime(dateIn)
-            cal.set(Calendar.HOUR_OF_DAY, 0)
-            cal.set(Calendar.MINUTE, 0)
-            cal.set(Calendar.SECOND, 0)
-            cal.set(Calendar.MILLISECOND, 0)
-            dateOut = cal.getTime()
-        }// fine del blocco if
-
-        /* valore di ritorno */
-        return dateOut
-    } // fine del metodo
-
-    /**
-     * Aggiunge ad un timestamp i secondi indicati.
-     * Se i secondi sono negativi, li sottrae <br>
-     *
-     * @param time timestamp di riferiemento
-     * @param secondi da aggiungere
-     * @return la data risultante
-     */
-    static Timestamp add(Timestamp time, Number secondi) {
-        /* variabili e costanti locali di lavoro */
-        Timestamp nuovoTimestamp = null
-        long msec
-        long delta
-        long nuova
-
-        if (time) {
-            msec = time.getTime()
-            delta = secondi * 1000
-            nuova = msec + delta
-            nuovoTimestamp = new Timestamp(nuova)
-        }// fine del blocco if
-
-        /* valore di ritorno */
-        return nuovoTimestamp
-    } // fine del metodo
 
     /**
      * Calcola quanti secondi sono passati tra due timestamp o tra due date
@@ -361,7 +471,7 @@ public class LibDate {
                 numWeek = 7
             }// fine del blocco if
 
-            settimana = Giorno.getShort(numWeek)
+            settimana = algosbase.Giorno.getShort(numWeek)
         }// fine del blocco if
 
         return settimana
@@ -749,37 +859,6 @@ public class LibDate {
         return data
     }
 
-    /**
-     * Restituisce la data corrente.
-     *
-     * @return la data del giorno
-     */
-    static Date getCorrente() {
-        /* variabili e costanti locali di lavoro */
-        Date dataOut = null
-        Date data
-        String stringa
-
-        try { // prova ad eseguire il codice
-
-            /* recupera la data di sistema */
-            data = new Date(System.currentTimeMillis())
-
-            // todo provvisorio!!
-//            data = Lib.Date.creaData(11,7,2008);
-
-            /* converte in stringa e poi di nuovo in data per forzare
-             * la perdita della parte relativa a ore, minuti, secondi ecc...
-             * che causa problemi nel confronto di date uguali */
-            stringa = LibDate.getStringa(data)
-            dataOut = LibDate.getData(stringa)
-
-        } catch (Exception unErrore) { // intercetta l'errore
-        }// fine del blocco try-catch
-
-        /* valore di ritorno */
-        return dataOut
-    }
 
     /**
      * Restituisce l'ora corrente.
@@ -967,7 +1046,7 @@ public class LibDate {
      *
      * @return data nel formato selezionato
      */
-    private static String getData(Date dataIn, Forma forma) {
+     static String getData(Date dataIn, Forma forma) {
         /* variabili e costanti locali di lavoro */
         String testo = ""
         String giorno
@@ -1180,42 +1259,6 @@ public class LibDate {
         return LibDate.getDataCorrente(Forma.estesa)
     }
 
-    /**
-     * Crea una data.
-     * <p/>
-     *
-     * @param giorno il giorno del mese (1 per il primo)
-     * @param mese il mese dell'anno (1 per gennaio)
-     * @param anno l'anno
-     *
-     * @return la data creata
-     */
-    static Date creaData(int giorno, int mese, int anno) {
-        /* variabili e costanti locali di lavoro */
-        Date data = null
-        Calendar cal
-
-        try { // prova ad eseguire il codice
-
-            cal = Calendar.getInstance()
-
-            cal.set(Calendar.YEAR, anno)
-            cal.set(Calendar.MONTH, mese - 1)
-            cal.set(Calendar.DAY_OF_MONTH, giorno)
-
-            cal.set(Calendar.HOUR_OF_DAY, 0)
-            cal.set(Calendar.MINUTE, 0)
-            cal.set(Calendar.SECOND, 0)
-            cal.set(Calendar.MILLISECOND, 0)
-
-            data = new java.util.Date(cal.getTime().getTime())
-
-        } catch (Exception unErrore) { // intercetta l'errore
-        }// fine del blocco try-catch
-
-        /* valore di ritorno */
-        return data
-    }
 
     /**
      * Converte una stringa in data.
@@ -1293,31 +1336,6 @@ public class LibDate {
         return giorno
     }
 
-    /**
-     * Ritorna l'anno di una data fornita.
-     * <p/>
-     *
-     * @param data fornita
-     *
-     * @return l'anno della data
-     */
-    static int getAnno(Date data) {
-        /* variabili e costanti locali di lavoro */
-        int anno = 0
-        GregorianCalendar cal
-
-        try {    // prova ad eseguire il codice
-            if (!Lib.Date.isVuota(data)) {
-                cal = LibDate.getCalendario()
-                cal.setTime(data)
-                anno = cal.get(Calendar.YEAR)
-            }// fine del blocco if
-        } catch (Exception unErrore) {    // intercetta l'errore
-        } // fine del blocco try-catch
-
-        /* valore di ritorno */
-        return anno
-    }
 
     /**
      * Ritorna il numero del mese di una data fornita.
@@ -1649,15 +1667,6 @@ public class LibDate {
         return num
     }
 
-    /**
-     * Ritorna l'anno corrente.
-     * <p/>
-     *
-     * @return l'anno della data corrente
-     */
-    static int getAnnoCorrente() {
-        return getAnno(getCorrente())
-    }
 
     /**
      * Ritorna il numero del mese corrente.
@@ -1956,9 +1965,6 @@ public class LibDate {
     }
 
 
-    private static GregorianCalendar getCalendario() {
-        return calendario
-    }
 
     //private static void setCalendario(GregorianCalendar calendario) {
     //    LibDate.calendario = calendario;
@@ -1973,6 +1979,34 @@ public class LibDate {
     private static void setDataVuota(Date dataVuota) {
         LibDate.dataVuota = dataVuota
     }
+
+    /**
+     * Restituisce il primo giorno della settimana (lunedì)
+     * relativo alla data ricevuta come parametro
+     *
+     * @param giorno
+     * @return primo giorno della settimana
+     */
+    public static Date getLunedi(Date giornoIn) {
+        /* variabili e costanti locali di lavoro */
+        Date giornoOut = null
+        Calendar cal
+        int numWeek
+
+        if (giornoIn) {
+            giornoOut = giornoIn
+            cal = Calendar.getInstance()
+            cal.setTime(giornoOut)
+
+            while (cal.get(Calendar.DAY_OF_WEEK) != 2) {
+                giornoOut = giornoOut - 1
+                cal.setTime(giornoOut)
+            }// fine del blocco while
+        }// fine del blocco if
+
+        /* valore di ritorno */
+        return giornoOut
+    } // fine del metodo
 
     /**
      * Classe interna Enumerazione.

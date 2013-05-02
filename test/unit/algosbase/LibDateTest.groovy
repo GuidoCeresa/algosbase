@@ -17,7 +17,36 @@ class LibDateTest extends GroovyTestCase {
         super.tearDown()
     }
 
-    void testProvvisorio() {
+    /**
+     * Restituisce il primo giorno della settimana (lunedì)
+     * relativo alla data ricevuta come parametro
+     *
+     * @param giorno
+     * @return primo giorno della settimana
+     */
+    void testGetLunedi() {
+        Date dataOriginaria
+        Date dataRichiesta
+        Date dataOttenuta
+        Calendar cal = Calendar.getInstance()
+
+        cal.set(2012, Calendar.NOVEMBER, 5, 0, 0, 0)
+        dataRichiesta = cal.getTime()
+
+        cal.set(2012, Calendar.NOVEMBER, 9, 0, 0, 0)
+        dataOriginaria = cal.getTime()
+        dataOttenuta=Lib.Date.getLunedi(dataOriginaria)
+        assert dataOttenuta == dataRichiesta
+
+        cal.set(2012, Calendar.NOVEMBER, 6, 0, 0, 0)
+        dataOriginaria = cal.getTime()
+        dataOttenuta=Lib.Date.getLunedi(dataOriginaria)
+        assert dataOttenuta == dataRichiesta
+
+        cal.set(2012, Calendar.NOVEMBER, 5, 0, 0, 0)
+        dataOriginaria = cal.getTime()
+        dataOttenuta=Lib.Date.getLunedi(dataOriginaria)
+        assert dataOttenuta == dataRichiesta
     }
 
 //    /**
