@@ -1,6 +1,6 @@
 package algosbase
 
-import grails.plugin.mail.MailService
+//import grails.plugin.mail.MailService
 
 /**
  * Created with IntelliJ IDEA.
